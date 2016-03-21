@@ -73,6 +73,6 @@ var people = [{
   "ip_address": "237.106.19.80"
 }];
 
-var pria = _.forEach(people, function(val){
-	$('#app').append('<p>' + val.first_name + ' ' + val.last_name + '</p>');
+_.forEach(people, function(val){
+	$('#app').append('<p>' + val.first_name + ' ' + val.last_name + '</p>' + '<p>' + val.email + '</p>');
 });
