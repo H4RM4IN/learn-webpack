@@ -17,7 +17,8 @@ const common = {
 
   output: {
     path: PATH.build,
-    filename: '[name].js'
+    filename: '[name].[chunkhash].js',
+    chunkFilename: '[chunkhash].js'
   },
 
   plugins: [
@@ -36,7 +37,14 @@ switch(process.env.npm_lifecycle_event) {
       {
         devtool: 'source-map'
       },
-      parts.cssLoader()
+      parts.definePlugin('process.env.NODE_ENV', 'production'),
+      parts.cleanBuild(PATH.build),
+      parts.chunkPlugin({
+        name: 'vendor',
+        entries: ['react']
+      }),
+      parts.minify(),
+      parts.extractCSS(PATH.app)
     );
 		break;
 	default:
@@ -45,7 +53,7 @@ switch(process.env.npm_lifecycle_event) {
       {
         devtool: 'eval-source-map'
       },
-      parts.cssLoader(),
+      parts.cssLoader(PATH.app),
       parts.devServer({
         host: process.env.HOST,
         port: process.env.PORT
