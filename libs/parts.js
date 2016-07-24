@@ -29,7 +29,7 @@ exports.cssLoader = function() {
 			loaders: [
 				{
 					test: /\.css$/,
-					loaders: ['style', 'css?modules']
+					loaders: ['style', 'css?modules&sourceMap']
 				}
 			]
 		}
