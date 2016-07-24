@@ -23,13 +23,14 @@ exports.devServer = function(options) {
 	};
 }
 
-exports.cssLoader = function() {
+exports.cssLoader = function(paths) {
 	return {
 		module: {
 			loaders: [
 				{
 					test: /\.css$/,
-					loaders: ['style', 'css?modules']
+					loaders: ['style', 'css?modules'],
+					include: paths
 				}
 			]
 		}

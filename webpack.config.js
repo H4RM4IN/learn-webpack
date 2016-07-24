@@ -33,7 +33,7 @@ switch(process.env.npm_lifecycle_event) {
 	case 'build':
 		config = merge(
       common,
-      parts.cssLoader()
+      parts.cssLoader(PATH.app)
     );
 		break;
 	default:
