@@ -1,28 +1,6 @@
 # Learn Webpack
 
-Learning basic of Webpack. Webpack config, require() a js.
+**NOTE:** Repo ini merupakan bagian dari tutorial belajar webpack [Memahami Webpack tidak sesulit memahami Wanita the Series](https://medium.com/react-id/memahami-webpack-tidak-sesulit-memahami-wanita-part-i-d185219f6559#.78m0vs2wu)
 
-Footnote: I am using lodash and jquery on this repo.
-
-### How to start?
-
-clone this repo
-```
-git clone https://github.com/alfredcrosby/learn-webpack.git <folder-name>
-```
-
-Install Webpack globally (if unavailable)
-```
-npm install -g webpack
-```
-
-Install lodash and jquery
-```
-npm install -S lodash
-npm install -S jquery
-```
-
-Last, run webpack command
-```
-webpack
-```
+## LICENSE
+Tutorial ini berlisensi [WTFPL](http://www.wtfpl.net/txt/copying/)
